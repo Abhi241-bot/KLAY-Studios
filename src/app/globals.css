@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* === Base === */
+  --color-white: #FFFFFF;
+  --color-bg: #FFFFFF;
+  --color-bg-warm: #FBF5F0;
+  --color-bg-deep: #F4E7DE;
+
+  /* === Terracotta family === */
+  --color-terracotta-900: #5C2A17;
+  --color-terracotta-700: #8C3F22;
+  --color-terracotta-500: #C1592E;
+  --color-terracotta-300: #E08A5B;
+  --color-terracotta-100: #E9C7B3;
+  --color-terracotta-050: #F6E4D8;
+
+  /* === Ink (text) === */
+  --color-ink-900: #241A15;
+  --color-ink-700: #4A3B33;
+  --color-ink-500: #7C6B62;
+  --color-ink-300: #B7A99E;
+
+  /* === Functional === */
+  --color-line: #E3D2C6;
+  --color-overlay: rgba(36, 26, 21, 0.55);
+  --color-focus: var(--color-terracotta-500);
+
+  /* === Radii / shadows === */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --shadow-card: 0 8px 30px rgba(36, 26, 21, 0.08);
+
+  /* === Typography === */
+  --font-display: 'Archivo', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --fs-hero: clamp(3rem, 8vw, 7rem);
+  --fs-h1: clamp(2rem, 5vw, 3.5rem);
+  --fs-h2: clamp(1.5rem, 3vw, 2.25rem);
+  --fs-body-lg: clamp(1.1rem, 1.6vw, 1.35rem);
+  --fs-body: 1rem;
+  --fs-label: 0.8rem;
+  --tracking-label: 0.08em;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink-700);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none; /* Custom cursor takes over */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Restore cursor on touch devices */
+@media (hover: none) {
+  body { cursor: auto; }
+}
+
+/* ==============================
+   Typography utilities
+   ============================== */
+.font-display { font-family: var(--font-display); }
+.font-body    { font-family: var(--font-body); }
+
+.text-hero    { font-size: var(--fs-hero); line-height: 1.05; letter-spacing: -0.02em; }
+.text-h1      { font-size: var(--fs-h1); line-height: 1.1; }
+.text-h2      { font-size: var(--fs-h2); line-height: 1.2; }
+.text-body-lg { font-size: var(--fs-body-lg); }
+.text-label   { font-size: var(--fs-label); letter-spacing: var(--tracking-label); text-transform: uppercase; }
+
+/* ==============================
+   Layout
+   ============================== */
+.container-site {
+  width: 100%;
+  max-width: 1520px;
+  margin-inline: auto;
+  padding-inline: clamp(24px, 5vw, 80px);
+}
+
+.section-spacing {
+  padding-block: clamp(80px, 12vw, 200px);
+}
+
+/* ==============================
+   Divider
+   ============================== */
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-line);
+}
+
+/* ==============================
+   HoverSwap text
+   ============================== */
+.hover-swap {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  vertical-align: bottom;
+}
+
+.hover-swap__inner {
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-swap__alt {
+  display: block;
+  position: absolute;
+  inset: 0;
+  transform: translateY(100%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-swap:hover .hover-swap__inner { transform: translateY(-100%); }
+.hover-swap:hover .hover-swap__alt   { transform: translateY(0); }
+
+/* ==============================
+   TextReveal mask
+   ============================== */
+.reveal-wrap {
+  overflow: hidden;
+  display: block;
+}
+
+/* ==============================
+   Arrow link micro-interaction
+   ============================== */
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-terracotta-500);
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: gap 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.arrow-link:hover { gap: 0.9rem; }
+
+/* ==============================
+   Underline input (contact form)
+   ============================== */
+.input-underline {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-line);
+  padding: 12px 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--color-ink-900);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-underline::placeholder { color: var(--color-ink-300); }
+.input-underline:focus { border-color: var(--color-terracotta-500); }
+
+/* ==============================
+   Video cover utility
+   ============================== */
+.video-cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==============================
+   Scroll Down cue
+   ============================== */
+@keyframes scrollDownLine {
+  0%, 100% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  50%       { transform: scaleY(0.3); opacity: 0.4; }
+}
+
+/* ==============================
+   Marquee
+   ============================== */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee var(--marquee-duration, 30s) linear infinite;
+}
+
+/* ==============================
+   Page transition overlay
+   ============================== */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: var(--color-terracotta-500);
+  transform-origin: bottom;
+}
+
+/* ==============================
+   Focus visible
+   ============================== */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
