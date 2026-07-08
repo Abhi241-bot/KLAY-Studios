@@ -27,8 +27,8 @@
     "country": "India",
     "year": 2026,
     "area": "3200 sqm",
-    "description": "A complete transformation from the ground up, this project began with the dismantling of the existing interiors, creating a blank canvas to reimagine the home into a sophisticated, contemporary living space. Every element was thoughtfully redesigned to maximize functionality while delivering an unmistakable sense of warmth and understated luxury.",
-    "prevSlug": "karmanghat-hyderabad-01",
+    "description": "The project transforms an outdated interior into a contemporary living space while retaining the existing architectural framework.",
+    "prevSlug": "silchar-assam",
     "nextSlug": "commercial-hyderabad"
   },
   {
@@ -104,6 +104,18 @@
     "area": "2400 sqm",
     "description": "A complete transformation from the ground up, this project began with the dismantling of the existing interiors, creating a blank canvas to reimagine the home into a sophisticated, contemporary living space. Every element was thoughtfully redesigned to maximize functionality while delivering an unmistakable sense of warmth and understated luxury.",
     "prevSlug": "commercial-hyderabad",
+    "nextSlug": "silchar-assam"
+  },
+  {
+    "id": "silchar-assam",
+    "slug": "silchar-assam",
+    "title": "SILCHAR ASSAM ",
+    "image": "https://lh3.googleusercontent.com/d/1FcJQZbBqeidc7uYL_--ouwAfVbzM1M9u",
+    "gallery": [
+      "https://lh3.googleusercontent.com/d/1FcJQZbBqeidc7uYL_--ouwAfVbzM1M9u",
+      "https://lh3.googleusercontent.com/d/1Vcd7bPCwXEgj63WwN2DATLJZZdX0tQ98"
+    ],
+    "prevSlug": "karmanghat-hyderabad-01",
     "nextSlug": "bowenpally-hyderabad"
   }
 ]
