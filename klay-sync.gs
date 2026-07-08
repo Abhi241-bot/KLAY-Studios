@@ -93,13 +93,12 @@ function setupTrigger() {
   ScriptApp.getProjectTriggers().forEach(function(t) {
     ScriptApp.deleteTrigger(t);
   });
-  // Re-create: run syncProjects every day at midnight
+  // Re-create: run syncProjects every 30 minutes
   ScriptApp.newTrigger('syncProjects')
     .timeBased()
-    .everyDays(1)
-    .atHour(0)
+    .everyMinutes(30)
     .create();
-  Logger.log('Daily trigger set up. syncProjects will run every day at midnight.');
+  Logger.log('Trigger set up. syncProjects will run every 30 minutes.');
 }
 
 // ══════════════════════════════════════════════════════════════
