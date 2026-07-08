@@ -18,16 +18,14 @@
       "https://lh3.googleusercontent.com/d/1Ylg5WBTPZbe7_3QzB0VVB-bPAhxqeWQd",
       "https://lh3.googleusercontent.com/d/1kBB0BEpTG-pHdigR1SrbC4j0eTVrMOMc"
     ],
-    "meta": {
-      "*_client": "Mr. And Mrs Rajeshwari Sudhakar",
-      "*_category": "Residential interiors",
-      "*_expertise": "Design + Execute",
-      "*_city": "Hyderabad",
-      "*_country": "India",
-      "*_year": "2026",
-      "*_area": "2400 sqm",
-      "*_description": "A complete transformation from the ground up, this project began with the dismantling of the existing interiors, creating a blank canvas to reimagine the home into a sophisticated, contemporary living space. Every element was thoughtfully redesigned to maximize functionality while delivering an unmistakable sense of warmth and understated luxury."
-    },
+    "client": "Mr. And Mrs Rajeshwari Sudhakar",
+    "category": "Residential interiors",
+    "expertise": "Design + Execute",
+    "city": "Hyderabad",
+    "country": "India",
+    "year": 2026,
+    "area": "2400 sqm",
+    "description": "A complete transformation from the ground up, this project began with the dismantling of the existing interiors, creating a blank canvas to reimagine the home into a sophisticated, contemporary living space. Every element was thoughtfully redesigned to maximize functionality while delivering an unmistakable sense of warmth and understated luxury.",
     "prevSlug": "karmanghat-hyderabad-01",
     "nextSlug": "karmanghat-hyderabad-01"
   }
