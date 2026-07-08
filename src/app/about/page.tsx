@@ -3,7 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { TextReveal, WordReveal } from '@/components/animations/TextReveal'
 import { Marquee } from '@/components/animations/Marquee'
-import { team, partners } from '@/lib/data'
+import { teamMembers } from '@/lib/data'
+
+const partners = [
+  'Marriott', 'Radisson', 'Hilton', 'Emaar', 'Aldar', 'Sobha',
+  'L&T Realty', 'DLF', 'Godrej Properties', 'Prestige Group',
+]
+
 import { TeamCard } from '@/components/ui/TeamCard'
 import { ArrowDown } from 'lucide-react'
 
@@ -13,8 +19,8 @@ export const metadata: Metadata = {
 }
 
 export default function AboutPage() {
-  const founders = team.filter(m => m.isFounder)
-  const rest = team.filter(m => !m.isFounder)
+  const founders = teamMembers.filter(m => m.isFounder)
+  const rest = teamMembers.filter(m => !m.isFounder)
 
   return (
     <>

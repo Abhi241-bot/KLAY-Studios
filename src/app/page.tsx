@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { projects } from '@/lib/data'
+import { getProjects } from '@/lib/projects'
 import { TextReveal, WordReveal } from '@/components/animations/TextReveal'
 import { Marquee } from '@/components/animations/Marquee'
 import { ScrollDownCue } from '@/components/ui/ScrollDownCue'
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const expertiseItems = ['DESIGN', 'BUILD', 'DESIGN + BUILD']
 
 export default function HomePage() {
-  const featured = projects.slice(0, 6)
+  const featured = getProjects().slice(0, 6)
 
   return (
     <>
@@ -115,52 +115,63 @@ export default function HomePage() {
       {/* ============================================
           SELECTED PROJECTS — marquee + grid
           ============================================ */}
-      <section className="section-spacing">
-        {/* Marquee eyebrow */}
-        <Marquee speed={25} className="mb-14 border-y border-line py-3">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <span
-              key={i}
-              className="text-label tracking-label font-display text-ink-300 shrink-0 px-10"
-            >
-              SELECTED PROJECTS
-            </span>
-          ))}
-        </Marquee>
+      {featured.length > 0 && (
+        <section className="section-spacing">
+          {/* Marquee eyebrow */}
+          <Marquee speed={25} className="mb-14 border-y border-line py-3">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <span
+                key={i}
+                className="text-label tracking-label font-display text-ink-300 shrink-0 px-10"
+              >
+                SELECTED PROJECTS
+              </span>
+            ))}
+          </Marquee>
 
-        <div className="container-site">
-          <div className="flex items-end justify-between mb-12 gap-6">
-            <TextReveal>
-              <h2 className="font-display font-semibold text-h2 text-ink-900">
-                Our Work
-              </h2>
-            </TextReveal>
-            <Link href="/projects" className="arrow-link shrink-0">
-              SEE ALL PROJECTS <ArrowRight size={16} />
-            </Link>
+          <div className="container-site">
+            <div className="flex items-end justify-between mb-12 gap-6">
+              <TextReveal>
+                <h2 className="font-display font-semibold text-h2 text-ink-900">
+                  Our Work
+                </h2>
+              </TextReveal>
+              <Link href="/projects" className="arrow-link shrink-0">
+                SEE ALL PROJECTS <ArrowRight size={16} />
+              </Link>
+            </div>
+
+            {/* Asymmetric grid — renders only as many cards as we have projects */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
+              {/* Row 1 — 1 large + 2 stacked */}
+              {featured[0] && (
+                <div className="md:col-span-7">
+                  <ProjectCard project={featured[0]} size="large" />
+                </div>
+              )}
+              {(featured[1] || featured[2]) && (
+                <div className="md:col-span-5 flex flex-col gap-4 md:gap-6">
+                  {featured[1] && <ProjectCard project={featured[1]} size="medium" />}
+                  {featured[2] && <ProjectCard project={featured[2]} size="medium" />}
+                </div>
+              )}
+
+              {/* Row 2 — 2 equal */}
+              {featured[3] && (
+                <div className="md:col-span-6">
+                  <ProjectCard project={featured[3]} size="medium" />
+                </div>
+              )}
+              {featured[4] && (
+                <div className="md:col-span-6">
+                  <ProjectCard project={featured[4]} size="medium" />
+                </div>
+              )}
+            </div>
           </div>
+        </section>
+      )}
 
-          {/* Asymmetric grid */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
-            {/* Row 1 — 1 large + 2 stacked */}
-            <div className="md:col-span-7">
-              <ProjectCard project={featured[0]} size="large" />
-            </div>
-            <div className="md:col-span-5 flex flex-col gap-4 md:gap-6">
-              <ProjectCard project={featured[1]} size="medium" />
-              <ProjectCard project={featured[2]} size="medium" />
-            </div>
-
-            {/* Row 2 — 2 equal */}
-            <div className="md:col-span-6">
-              <ProjectCard project={featured[3]} size="medium" />
-            </div>
-            <div className="md:col-span-6">
-              <ProjectCard project={featured[4]} size="medium" />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ============================================
           MANIFESTO BAND
