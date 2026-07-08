@@ -8,10 +8,11 @@ import { ScrollDownCue } from '@/components/ui/ScrollDownCue'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 
 interface Props {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export const revalidate = 60
+export const dynamicParams = true
 
 export async function generateStaticParams() {
   const projects = getProjects()
@@ -19,7 +20,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = getProjectBySlug(params.slug)
+  const { slug } = await params
+  const project = getProjectBySlug(slug)
   if (!project) return { title: 'Project Not Found' }
   const desc = [
     project.expertise,
@@ -30,11 +32,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return { title: project.title, description: desc }
 }
 
-export default function ProjectDetailPage({ params }: Props) {
-  const project = getProjectBySlug(params.slug)
+export default async function ProjectDetailPage({ params }: Props) {
+  const { slug } = await params
+  const project = getProjectBySlug(slug)
   if (!project) notFound()
 
-  const { prev, next } = getAdjacentProjects(params.slug)
+  const { prev, next } = getAdjacentProjects(slug)
 
   // Build meta fields from whatever data exists
   const metaFields = [
