@@ -52,7 +52,7 @@
 
 var CONFIG = {
   // Name of your root folder in Google Drive
-  DRIVE_FOLDER_NAME: 'KLAY Projects',
+  DRIVE_FOLDER_NAME: 'KLAY PROJECTS',
 
   // Your GitHub username
   GITHUB_OWNER: 'Abhi241-bot',
@@ -66,9 +66,8 @@ var CONFIG = {
   // Path of the file inside the repo to update
   GITHUB_FILE_PATH: 'public/projects.json',
 
-  // GitHub Personal Access Token — generate at https://github.com/settings/tokens
-  // Needs repo scope. Store this in Script Properties (see storeToken() below).
-  // Do NOT paste it directly here if you share this file.
+  // The Script Property key name where your token is stored.
+  // The actual token is stored securely via storeToken() — NOT here.
   GITHUB_TOKEN_PROPERTY: 'GITHUB_TOKEN',
 };
 
@@ -76,11 +75,11 @@ var CONFIG = {
 //  STEP 0: Store your GitHub token securely (run once)
 // ══════════════════════════════════════════════════════════════
 function storeToken() {
-  // Replace YOUR_TOKEN_HERE with your actual GitHub Personal Access Token
-  // then run this function ONCE, then remove the token from the code.
+  // ✅ Token already stored. This function is kept for reference.
+  // To re-store a new token, paste it below, run once, then delete it.
   PropertiesService.getScriptProperties().setProperty(
-    CONFIG.GITHUB_TOKEN_PROPERTY,
-    'YOUR_TOKEN_HERE'
+    'GITHUB_TOKEN',
+    'PASTE_NEW_TOKEN_HERE_THEN_DELETE'
   );
   Logger.log('Token stored successfully.');
 }
