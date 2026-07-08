@@ -1,5 +1,19 @@
 [
   {
+    "id": "bowenpally-hyderabad",
+    "slug": "bowenpally-hyderabad",
+    "title": "BOWENPALLY HYDERABAD",
+    "image": "https://lh3.googleusercontent.com/d/1m2tcaXWKMcPLPr585CWthRdVKMwJHRgL",
+    "gallery": [
+      "https://lh3.googleusercontent.com/d/1m2tcaXWKMcPLPr585CWthRdVKMwJHRgL",
+      "https://lh3.googleusercontent.com/d/1iRa9zlns5gAZ9ruE59LZbTIpGRycJfds",
+      "https://lh3.googleusercontent.com/d/1M3DmjF6MR8_lqWU-XcSGyLGOSId5cMYV",
+      "https://lh3.googleusercontent.com/d/1M0G7iIew2U1qn8mvGbL7Caj7gVlH4Z3a"
+    ],
+    "prevSlug": "karmanghat-hyderabad-01",
+    "nextSlug": "karmanghat-hyderabad-01"
+  },
+  {
     "id": "karmanghat-hyderabad-01",
     "slug": "karmanghat-hyderabad-01",
     "title": "INTERIOR PROJECT",
@@ -26,7 +40,7 @@
     "year": 2026,
     "area": "2400 sqm",
     "description": "A complete transformation from the ground up, this project began with the dismantling of the existing interiors, creating a blank canvas to reimagine the home into a sophisticated, contemporary living space. Every element was thoughtfully redesigned to maximize functionality while delivering an unmistakable sense of warmth and understated luxury.",
-    "prevSlug": "karmanghat-hyderabad-01",
-    "nextSlug": "karmanghat-hyderabad-01"
+    "prevSlug": "bowenpally-hyderabad",
+    "nextSlug": "bowenpally-hyderabad"
   }
 ]
