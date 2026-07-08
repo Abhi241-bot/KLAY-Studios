@@ -1,10 +1,12 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 type CursorMode = 'default' | 'view' | 'play' | 'drag'
 
 export function CustomCursor() {
+  const pathname = usePathname()
   const dotRef = useRef<HTMLDivElement>(null)
   const pillRef = useRef<HTMLDivElement>(null)
   const [mode, setMode] = useState<CursorMode>('default')
@@ -12,6 +14,12 @@ export function CustomCursor() {
   const pos = useRef({ x: 0, y: 0 })
   const current = useRef({ x: 0, y: 0 })
   const rafId = useRef<number>(0)
+
+  // Reset cursor mode on page navigation
+  useEffect(() => {
+    setMode('default')
+  }, [pathname])
+
 
   useEffect(() => {
     // Only show on non-touch devices

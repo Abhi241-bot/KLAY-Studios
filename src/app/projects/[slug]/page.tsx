@@ -151,7 +151,6 @@ export default async function ProjectDetailPage({ params }: Props) {
           <Link
             href={`/projects/${prev.slug}`}
             className="group flex flex-col gap-2 p-8 md:p-12 border-r border-line hover:bg-bg-warm transition-colors duration-300"
-            data-cursor="view"
           >
             <span className="flex items-center gap-2 text-label tracking-label text-ink-300 font-display">
               <ArrowLeft size={14} /> PREV PROJECT
@@ -166,7 +165,6 @@ export default async function ProjectDetailPage({ params }: Props) {
           <Link
             href={`/projects/${next.slug}`}
             className="group flex flex-col gap-2 p-8 md:p-12 items-end hover:bg-bg-warm transition-colors duration-300"
-            data-cursor="view"
           >
             <span className="flex items-center gap-2 text-label tracking-label text-ink-300 font-display">
               NEXT PROJECT <ArrowRight size={14} />
