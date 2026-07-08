@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "id": "karmanghat-hyderabad-01",
+    "slug": "karmanghat-hyderabad-01",
+    "title": "INTERIOR PROJECT",
+    "image": "https://lh3.googleusercontent.com/d/1FROAyyokDXW84RpeXrX4dX5MxeHa4_Fb",
+    "gallery": [
+      "https://lh3.googleusercontent.com/d/1FROAyyokDXW84RpeXrX4dX5MxeHa4_Fb",
+      "https://lh3.googleusercontent.com/d/1Eufj-5ilc5V85A5T66HF5Vm3KoiKdgF5",
+      "https://lh3.googleusercontent.com/d/1uo5QxxxzJuAg-lIa6HuvCTN_a7-yXUNE",
+      "https://lh3.googleusercontent.com/d/1fuZDZt5FPHthaeLzn5z6ApywTZE7xVZI",
+      "https://lh3.googleusercontent.com/d/14E5NN0iSHe2jT2s5wXBGnQ5PtIADNd8M",
+      "https://lh3.googleusercontent.com/d/10F6ertUm44gVqQ8eI4gA5GWQ0LO1Qktg",
+      "https://lh3.googleusercontent.com/d/1TvOJZwa0yyqqaH1nli9kj1wCmyTW2vY1",
+      "https://lh3.googleusercontent.com/d/1XRmGeNxo62_am7tgyl3i9HXKHT0K0-Zq",
+      "https://lh3.googleusercontent.com/d/1vRxV3I6IaTJ-cYiUtT_4u9abW85WD1HG",
+      "https://lh3.googleusercontent.com/d/1OlqH_1PcIWGEn1i-1thikwhLuCSEJuYh",
+      "https://lh3.googleusercontent.com/d/1Ylg5WBTPZbe7_3QzB0VVB-bPAhxqeWQd",
+      "https://lh3.googleusercontent.com/d/1kBB0BEpTG-pHdigR1SrbC4j0eTVrMOMc"
+    ],
+    "meta": {
+      "*_client": "Mr. And Mrs Rajeshwari Sudhakar",
+      "*_category": "Residential interiors",
+      "*_expertise": "Design + Execute",
+      "*_city": "Hyderabad",
+      "*_country": "India",
+      "*_year": "2026",
+      "*_area": "2400 sqm",
+      "*_description": "A complete transformation from the ground up, this project began with the dismantling of the existing interiors, creating a blank canvas to reimagine the home into a sophisticated, contemporary living space. Every element was thoughtfully redesigned to maximize functionality while delivering an unmistakable sense of warmth and understated luxury."
+    },
+    "prevSlug": "karmanghat-hyderabad-01",
+    "nextSlug": "karmanghat-hyderabad-01"
+  }
+]
