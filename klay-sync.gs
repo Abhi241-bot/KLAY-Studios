@@ -248,7 +248,11 @@ function parseInfoTxt(content) {
   content.split('\n').forEach(function(line) {
     var colonIdx = line.indexOf(':');
     if (colonIdx === -1) return;
-    var key = line.substring(0, colonIdx).trim().toLowerCase().replace(/\s+/g, '_');
+    var key = line.substring(0, colonIdx)
+      .trim()
+      .replace(/^[\*\-•]+\s*/, '')  // strip leading * - • bullet characters
+      .toLowerCase()
+      .replace(/\s+/g, '_');
     var value = line.substring(colonIdx + 1).trim();
     if (key && value) {
       result[key] = value;
